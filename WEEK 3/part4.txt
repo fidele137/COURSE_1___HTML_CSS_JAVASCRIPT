@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<script>
+        
+        function generateFaces(numberOfFaces) {
+        
+    		var theLeftSide = document.getElementById("leftSide");
+            var theRightSide = document.getElementById("rightSide");
+            var theBody = document.getElementsByTagName("body")[0];
+            
+        	for (var i=0; i < numberOfFaces; i++) {
+            	var l = Math.floor(Math.random()*400).toString() + "px";
+                var t = Math.floor(Math.random()*400).toString() + "px";
+                var imag = document.createElement("img");
+                imag.src =  "http://home.cse.ust.hk/~rossiter/mooc/matching_game/smile.png";
+                imag.style.top = t;
+                imag.style.left = l;
+                theLeftSide.appendChild(imag);
+            }
+            
+            var leftSideImages = theLeftSide.cloneNode(true);
+            leftSideImages.removeChild(leftSideImages.childNodes[numberOfFaces-1]);
+            theRightSide.appendChild(leftSideImages);
+            
+            theLeftSide.lastChild.onclick =
+            function nextLevel(event) {
+            	event.stopPropagation();
+                while (theLeftSide.childNodes[0]) {
+                	theLeftSide.removeChild(theLeftSide.childNodes[0]);
+                    i++;
+                }
+                while (theRightSide.childNodes[0]) {
+                	theRightSide.removeChild(theRightSide.childNodes[0]);
+                    i++;
+                }
+                numberOfFaces += 5;
+                generateFaces(numberOfFaces);
+			};
+            
+            theBody.onclick =
+            function gameOver(event) {
+            	alert("Game Over!");
+                theBody.onclick = null;
+                theLeftSide.lastChild.onclick = null;
+			};
+            
+            
+        }
+
+        
+    </script>
+    
+    <style>
+    	div {position:absolute; width:500px; height:500px; }
+    	#rightSide {left: 500px; border-left: 1px solid black; }
+        img {position:absolute; }
+    </style>
+</head>
+
+<body onload="generateFaces(5)">
+
+	<h2>Mathing game</h2>
+    <p>Click on the extra smiling face on the left</p>
+    <div id="leftSide"></div>
+
+    <div id="rightSide"></div>
+
+
+</body>
+
+</html>
