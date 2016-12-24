@@ -1,0 +1,76 @@
+
+
+WEEK 1 -----------------------------------------------
+
+ul, ol, b, strong, i, em, mark, sub, sup, ins, del
+img: src
+audio: atoplay, controls, loop, this_new_html_tag
+video: atoplay, controls, loop, alt
+a: href, lorem upsium
+void elts: meta, inp, img, breaks: br, wbr, hr
+
+link (href, rel, type) -> css
+style: id or p, h1.. or class(.zappy)
+pseudo classes: h1:hover/link/visited/active/empty
+
+tables: theader (tr, th) tbody(tr,td)
+div(position:absolute/relative ), span
+
+form(action, method"get/post"); textarea; input(type"submit"  value"send"); radio, checkbox, select(option); attributes (value, placeholder, autofocus, required); label(for "id")
+
+Groups: fieldset, legend
+
+
+WEEK 2 -----------------------------------------------
+
+functions: alert(), confirm(), prompt()
+var, typeof;
+events: onload
+console.log()
+if, switch, while, do while
+var text = "mytext", mytext.indexof(x)==>4
+&&, ||, !
+arrays: var pets= ["cat", "dog"], or , var pets = new Array(10), pets[2]
+join:		pets.join(" and "); default separator = ","
+pets.length (length), pets.push("Hamster") (add it to the end), pets.unshift("Hamster") (add it to the start), pets.pop() (remove the last one), pets.shift() (remove the first item), array1.concat(array2) (concatenate)
+random: Math.random()<==> Math.random()*1, Math.floor(), isNaN
+
+
+WEEK 3 -----------------------------------------------
+
+for, for in, for of
+break, continue
+var pets= ["cat", "dog"], pets.sort(), pets.reverse(), pets.sort().reverse(), pets.indexOf("cat"), pets.indexOf(target, start_position) ==> return -1, pets.lastIndexOf(), pets.slice(1), pets.slice(1,2); pets.splice ==> affecting the original array, pets.splice(2, 0, "Rabbit"),  
+pets.forEach(alert) <==> for (var i in pets) { alert(pets[i]) }
+
+forEach ==> change the original array
+function forEach(theArray, fn) {
+	for (var i = 0; i <theArray.length; i++){
+		fn( theArray[i], i, theArray ) 
+	}
+} // useful when we need the three parameters of fn
+
+map ==> doesn't change the original array
+
+DOM: Document Object Model
+locating nodes:  .childNode[0]. ..., getElementByTagName(), getElementById(), setAttribute()
+creating or adding nodes: createElement(), createTextNode(), insertBefore(), appendChild()
+deleting nodes: removeChild(), 
+cloning nodes: copying node: the_node.cloneNode(), copying a branch: the_node.cloneNode(true), adding nodes: dest.appendChild(the_node)
+
+n = 1
+i = 0: count = 0, n = 2
+i = 1: count = 1, n = 3
+i = 2: count = 2, n = 4
+i = 3: count = 3, count = 0, n = 3
+i = 4: count = 1, n = 4
+i = 5: count = 2
+i = 6: count = 3, count = 0, n = 3
+i = 7: count = 1, n = 4
+i = 8: count = 2, n = 5
+
+mouse events: onclick, onmousedown, onmouseup, onmouseover, onmouseout
+time events: the_timer = setTimeout(function, 1000), clearTimeout(the_timer) , setInterval, clearInterval
+add events using javascript: window.onload = do_something(), window.addEventListerner("load", do_something), theBody.removeEventListener("load", do_something)
+
+
